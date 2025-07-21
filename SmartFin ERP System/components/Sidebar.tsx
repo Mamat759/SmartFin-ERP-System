@@ -15,12 +15,8 @@ import {
 } from 'lucide-react';
 import { Button } from './ui/button';
 import { useTheme } from './ThemeProvider';
-// Logo component
-const SmartFinLogo = ({ className }: { className?: string }) => (
-  <div className={`flex items-center justify-center bg-gradient-to-br from-blue-600 to-purple-600 text-white font-bold rounded ${className}`}>
-    SF
-  </div>
-);
+// Simple logo placeholder - can be replaced with actual logo later
+const smartFinLogo = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudCkiLz4KPHR4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iYm9sZCI+U0Y8L3R4dD4KPGR4ZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkaWVudCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMzb2I4ZjYiLz4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjOGI1Y2Y2Ii8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8L3N2Zz4=";
 
 interface SidebarProps {
   activeModule: string;
@@ -36,7 +32,7 @@ const menuItems = [
   { id: 'crm', label: 'CRM/Продажи', icon: Users, color: 'text-orange-500' },
   { id: 'payroll', label: 'Зарплата', icon: CreditCard, color: 'text-pink-500' },
   { id: 'reports', label: 'Отчеты', icon: BarChart3, color: 'text-indigo-500' },
-  { id: 'settings', label: 'Настройки', icon: Settings, color: 'text-gray-500' },
+  { id: 'settings', label: '��астройки', icon: Settings, color: 'text-gray-500' },
 ];
 
 export const Sidebar: React.FC<SidebarProps> = ({
