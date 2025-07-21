@@ -266,8 +266,13 @@ export const Dashboard: React.FC<DashboardProps> = ({ setActiveModule }) => {
                 <h3 className="font-semibold text-lg">Последние документы</h3>
               </div>
               
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button variant="outline" size="sm" className="hover:bg-purple-50 dark:hover:bg-purple-950/20">
+                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="hover:bg-purple-50 dark:hover:bg-purple-950/20"
+                  onClick={() => setActiveModule && setActiveModule('reports')}
+                >
                   <Eye className="w-4 h-4 mr-2" />
                   Все документы
                 </Button>
