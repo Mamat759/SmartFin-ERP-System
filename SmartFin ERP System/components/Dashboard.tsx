@@ -86,7 +86,11 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 }
 };
 
-export const Dashboard: React.FC = () => {
+interface DashboardProps {
+  setActiveModule?: (module: string) => void;
+}
+
+export const Dashboard: React.FC<DashboardProps> = ({ setActiveModule }) => {
   return (
     <div className="p-6 space-y-6 overflow-y-auto h-full bg-gradient-to-br from-background via-background to-muted/20">
       {/* Header */}
@@ -195,7 +199,7 @@ export const Dashboard: React.FC = () => {
               <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg">
                 <Zap className="w-5 h-5 text-white" />
               </div>
-              <h3 className="font-semibold text-lg">Быстрые действия</h3>
+              <h3 className="font-semibold text-lg">Быстрые действ��я</h3>
             </div>
             
             <div className="space-y-3">
