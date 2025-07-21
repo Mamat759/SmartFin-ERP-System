@@ -8,7 +8,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '.
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
 import { Badge } from '../ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { useData } from '../DataProvider';
 import { 
   Plus, 
@@ -27,7 +27,7 @@ import {
 
 const movements = [
   { id: 1, type: 'Приход', document: 'ПН-001245', date: '18.07.2025', product: 'Системный блок HP ProDesk', quantity: 10, status: 'Проведен' },
-  { id: 2, type: 'Расход', document: 'РН-000876', date: '17.07.2025', product: 'Монитор Dell 24"', quantity: -5, status: 'Проведен' },
+  { id: 2, type: 'Расход', document: '��Н-000876', date: '17.07.2025', product: 'Монитор Dell 24"', quantity: -5, status: 'Проведен' },
   { id: 3, type: 'Перемещение', document: 'ПМ-000432', date: '16.07.2025', product: 'Клавиатура Logitech', quantity: 20, status: 'В обработке' },
 ];
 
@@ -183,7 +183,7 @@ export const WarehouseModule: React.FC = () => {
         transition={{ delay: 0.2 }}
       >
         {[
-          { title: 'Общая стоимость', value: `${totalValue.toLocaleString()} ₽`, icon: Package, color: 'from-green-500 to-emerald-500' },
+          { title: 'Общая стоим��сть', value: `${totalValue.toLocaleString()} ₽`, icon: Package, color: 'from-green-500 to-emerald-500' },
           { title: 'Позиций товаров', value: products.length.toString(), icon: TrendingUp, color: 'from-blue-500 to-cyan-500' },
           { title: 'Движений за день', value: '18', icon: RotateCcw, color: 'from-purple-500 to-violet-500' },
           { title: 'Требует внимания', value: '3', icon: TrendingDown, color: 'from-red-500 to-pink-500' }

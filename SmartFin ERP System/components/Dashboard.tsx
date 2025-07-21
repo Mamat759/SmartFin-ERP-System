@@ -86,7 +86,11 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 }
 };
 
-export const Dashboard: React.FC = () => {
+interface DashboardProps {
+  setActiveModule?: (module: string) => void;
+}
+
+export const Dashboard: React.FC<DashboardProps> = ({ setActiveModule }) => {
   return (
     <div className="p-6 space-y-6 overflow-y-auto h-full bg-gradient-to-br from-background via-background to-muted/20">
       {/* Header */}
@@ -209,9 +213,27 @@ export const Dashboard: React.FC = () => {
                     transition={{ delay: 0.5 + index * 0.1 }}
                     whileHover={{ x: 4 }}
                   >
-                    <Button
+                                        <Button
                       variant="ghost"
                       className="w-full justify-start h-12 hover:bg-white/60 dark:hover:bg-gray-800/60 group"
+                      onClick={() => {
+                        if (setActiveModule) {
+                          switch (action.label) {
+                            case 'Создать накладную':
+                              setActiveModule('warehouse');
+                              break;
+                            case 'Добавить товар':
+                              setActiveModule('warehouse');
+                              break;
+                            case 'Новый клиент':
+                              setActiveModule('crm');
+                              break;
+                            case 'Выписать счет':
+                              setActiveModule('accounting');
+                              break;
+                          }
+                        }
+                      }}
                     >
                       <motion.div 
                         className={`p-2 ${action.color} rounded-lg mr-3 group-hover:scale-110 transition-transform`}
@@ -244,8 +266,13 @@ export const Dashboard: React.FC = () => {
                 <h3 className="font-semibold text-lg">Последние документы</h3>
               </div>
               
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button variant="outline" size="sm" className="hover:bg-purple-50 dark:hover:bg-purple-950/20">
+                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="hover:bg-purple-50 dark:hover:bg-purple-950/20"
+                  onClick={() => setActiveModule && setActiveModule('reports')}
+                >
                   <Eye className="w-4 h-4 mr-2" />
                   Все документы
                 </Button>
@@ -259,8 +286,9 @@ export const Dashboard: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 + index * 0.1 }}
-                  whileHover={{ scale: 1.01, x: 4 }}
+                                    whileHover={{ scale: 1.01, x: 4 }}
                   className="flex items-center justify-between p-4 bg-white/60 dark:bg-gray-800/40 rounded-xl border border-gray-200/50 dark:border-gray-700/50 cursor-pointer group"
+                  onClick={() => setActiveModule && setActiveModule('accounting')}
                 >
                   <div className="flex items-center space-x-4">
                     <motion.div 
