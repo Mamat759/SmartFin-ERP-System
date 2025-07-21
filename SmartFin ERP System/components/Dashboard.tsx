@@ -286,8 +286,9 @@ export const Dashboard: React.FC<DashboardProps> = ({ setActiveModule }) => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 + index * 0.1 }}
-                  whileHover={{ scale: 1.01, x: 4 }}
+                                    whileHover={{ scale: 1.01, x: 4 }}
                   className="flex items-center justify-between p-4 bg-white/60 dark:bg-gray-800/40 rounded-xl border border-gray-200/50 dark:border-gray-700/50 cursor-pointer group"
+                  onClick={() => setActiveModule && setActiveModule('accounting')}
                 >
                   <div className="flex items-center space-x-4">
                     <motion.div 
