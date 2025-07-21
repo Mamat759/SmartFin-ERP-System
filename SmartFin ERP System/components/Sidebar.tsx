@@ -15,7 +15,12 @@ import {
 } from 'lucide-react';
 import { Button } from './ui/button';
 import { useTheme } from './ThemeProvider';
-import smartFinLogo from 'figma:asset/90ce0551c16e41256b4c963450a82b93fa87fdcb.png';
+// Logo component
+const SmartFinLogo = ({ className }: { className?: string }) => (
+  <div className={`flex items-center justify-center bg-gradient-to-br from-blue-600 to-purple-600 text-white font-bold rounded ${className}`}>
+    SF
+  </div>
+);
 
 interface SidebarProps {
   activeModule: string;
