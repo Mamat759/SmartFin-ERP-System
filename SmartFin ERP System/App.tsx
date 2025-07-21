@@ -17,9 +17,9 @@ export default function App() {
   const [sidebarCollapsed, setSidebarCollapsed] =
     useState(false);
 
-  const renderContent = () => {
+    const renderContent = () => {
     const components = {
-      dashboard: Dashboard,
+      dashboard: () => <Dashboard setActiveModule={setActiveModule} />,
       warehouse: WarehouseModule,
       accounting: AccountingModule,
       crm: CRMModule,
@@ -28,7 +28,7 @@ export default function App() {
       settings: SettingsModule,
     };
 
-    const Component = components[activeModule] || Dashboard;
+    const Component = components[activeModule] || components.dashboard;
 
     return (
       <AnimatePresence mode="wait">
