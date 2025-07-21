@@ -10,7 +10,7 @@ import { Badge } from '../ui/badge';
 import { Avatar, AvatarFallback } from '../ui/avatar';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { useData } from '../DataProvider';
 import { 
   Plus, 
@@ -67,7 +67,7 @@ export const CRMModule: React.FC = () => {
 
   const handleAddClient = () => {
     if (!newClient.name || !newClient.contact || !newClient.email) {
-      toast.error('Заполните все обязательные поля');
+      toast.error('Заполните все обязательные по��я');
       return;
     }
 
