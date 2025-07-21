@@ -199,7 +199,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ setActiveModule }) => {
               <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg">
                 <Zap className="w-5 h-5 text-white" />
               </div>
-              <h3 className="font-semibold text-lg">Быстрые действ��я</h3>
+              <h3 className="font-semibold text-lg">Быстрые действия</h3>
             </div>
             
             <div className="space-y-3">
@@ -213,9 +213,27 @@ export const Dashboard: React.FC<DashboardProps> = ({ setActiveModule }) => {
                     transition={{ delay: 0.5 + index * 0.1 }}
                     whileHover={{ x: 4 }}
                   >
-                    <Button
+                                        <Button
                       variant="ghost"
                       className="w-full justify-start h-12 hover:bg-white/60 dark:hover:bg-gray-800/60 group"
+                      onClick={() => {
+                        if (setActiveModule) {
+                          switch (action.label) {
+                            case 'Создать накладную':
+                              setActiveModule('warehouse');
+                              break;
+                            case 'Добавить товар':
+                              setActiveModule('warehouse');
+                              break;
+                            case 'Новый клиент':
+                              setActiveModule('crm');
+                              break;
+                            case 'Выписать счет':
+                              setActiveModule('accounting');
+                              break;
+                          }
+                        }
+                      }}
                     >
                       <motion.div 
                         className={`p-2 ${action.color} rounded-lg mr-3 group-hover:scale-110 transition-transform`}
